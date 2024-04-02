@@ -2,36 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello World</title>
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-
-</head>
-<body>
-
-<h1>Hello World</h1>
+<title>Get Public IP using Ipify</title>
 <script type="application/javascript">
   function getIP(json) {
-    //document.write("My public IP address is: ", json.ip);
-    console.log("My public IP address is: ", json.ip);
-    
-    fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-    console.log('Your IP address is ' + data.ip);
-    })
-    .catch(error => console.log('Unable to get IP address', error));
+    document.write("My public IP address is: " + json.ip);
   }
-  getIP();
 </script>
+</head>
+<body>
+<h1>Welcome to My Website</h1>
+<p>Your public IP address is displayed below:</p>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 </html>
