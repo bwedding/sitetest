@@ -14,6 +14,14 @@
     font-family: Arial, sans-serif;
   }
 </style>
+  <script>
+  fetch('https://api.ipify.org?format=json')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Your IP address is ' + data.ip);
+  })
+  .catch(error => console.log('Unable to get IP address', error));
+</script>
 </head>
 <body>
 <h1>Hello World</h1>
