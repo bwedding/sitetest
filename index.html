@@ -21,8 +21,16 @@
 <h1>Hello World</h1>
 <script type="application/javascript">
   function getIP(json) {
-    document.write("My public IP address is: ", json.ip);
-}
+    //document.write("My public IP address is: ", json.ip);
+    console.log("My public IP address is: ", json.ip);
+    
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+    console.log('Your IP address is ' + data.ip);
+    })
+    .catch(error => console.log('Unable to get IP address', error));
+  }
   getIP();
 </script>
 </body>
